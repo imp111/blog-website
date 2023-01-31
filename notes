@@ -18,5 +18,10 @@ Populating empty project:
 2. _ViewStart file - Razor View Start file
 3. Shared Folder
 4. _Layout page inside Shared folder - Razor Layout file (this is what is going to be displayed on all the pages as a template)
+5. _ViewImports inside View folder - Razor View Imports file (this file allows us to import classes like Controller, etc. that the framework provides.
 
+Naming convention:
+Controller name coresponds to the view folder and the action name to the view in the folder.
+HomeController, Action Index
+View, Home, Index
 
