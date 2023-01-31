@@ -79,7 +79,7 @@ namespace Blog_Website.Controllers
         //POST-Delete Expense, works with the database
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeleteExpense(int? id)
+        public IActionResult DeletePost(int? id)
         {
             var obj = _db.Posts.Find(id);
 
