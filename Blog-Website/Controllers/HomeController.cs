@@ -37,7 +37,7 @@ namespace Blog_Website.Controllers
         [HttpPost]
         public IActionResult Edit(Post post) // POST HTTP METHOD
         {
-            return View();
+            return RedirectToAction("Index");
         }
 
 
