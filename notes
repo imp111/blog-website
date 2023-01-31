@@ -1,0 +1,22 @@
+NuGet Packages:
+Microsoft.EntitiyFrameworkCore.Tools
+Microsoft.EntityFrameworkCore
+Microsoft.EntityFrameworkCore.SqlServer
+ASP.NET and packages version: 6.0.12
+
+Installed Extentions:
+- Open Command Line
+- Add New File
+
+Program.cs - the entry point of the executable (contains main method, the starting point of the application)
+
+Extention Add New File shortcut: shift + f2 - creates new files or folder
+ctrl + shift + a - create new file
+
+Populating empty project:
+1. Views folder
+2. _ViewStart file - Razor View Start file
+3. Shared Folder
+4. _Layout page inside Shared folder - Razor Layout file (this is what is going to be displayed on all the pages as a template)
+
+
