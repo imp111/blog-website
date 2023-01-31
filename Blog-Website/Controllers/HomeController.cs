@@ -41,20 +41,39 @@ namespace Blog_Website.Controllers
 
             return RedirectToAction("Index");
         }
-
+        
+        
         [HttpGet]
-        public IActionResult Edit() // GET HTTP METHOD
+        public IActionResult Edit(int? id) // GET HTTP METHOD
         {
-            return View();
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+
+            var obj = _db.Posts.Find(id);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
         }
 
         [HttpPost]
-        public IActionResult Edit(int? id) // POST HTTP METHOD
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Post obj) //POST-Delete HTTP METHOD, works with the database
         {
-            _db.Posts.Find(id);
-            _db.SaveChanges();
+            if (ModelState.IsValid)
+            {
+                _db.Posts.Update(obj);
+                _db.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            return View(obj);
         }
 
         // GET-Delete Expense, works with the view
