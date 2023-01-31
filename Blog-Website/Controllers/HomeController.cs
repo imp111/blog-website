@@ -1,4 +1,5 @@
-﻿using Blog_Website.Models;
+﻿using Blog_Website.Data;
+using Blog_Website.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace Blog_Website.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _db;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
         {
             _logger = logger;
+            _db = db;
         }
 
         public IActionResult Index()
@@ -23,9 +26,19 @@ namespace Blog_Website.Controllers
             return View();
         }
 
-        public IActionResult Post()
+        [HttpGet]
+        public IActionResult Post() // GET HTTP METHOD
         {
-            return View();
+            return View(new Post());
+        }
+
+        [HttpPost]
+        public IActionResult Post(Post post) // POST HTTP METHOD
+        {
+            _db.Posts.Add(post);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         [HttpGet]
@@ -37,6 +50,9 @@ namespace Blog_Website.Controllers
         [HttpPost]
         public IActionResult Edit(Post post) // POST HTTP METHOD
         {
+            _db.Posts.Add(post);
+            _db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
