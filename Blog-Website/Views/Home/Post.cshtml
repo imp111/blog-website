@@ -7,14 +7,12 @@
 <div>
     <form asp-controller="Home" asp-action="Post" method="post">
         
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="inputGroup-sizing-default">Post Title: </span>
-            <input asp-for="Title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <div class="mb-3">
+            <input asp-for="Title" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="formGroupExampleInput" placeholder="Title: ">
         </div>
 
         <div class="input-group">
-            <span class="input-group-text">Body: </span>
-            <textarea asp-for="Body" class="form-control" aria-label="With textarea"></textarea>
+            <textarea asp-for="Body" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="formGroupExampleInput" placeholder="Body: "></textarea>
         </div>
 
         <input type="submit" class="btn btn-secondary btn-lg" value="Submit" />
