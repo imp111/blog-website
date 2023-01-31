@@ -18,7 +18,8 @@ namespace Blog_Website.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Post> postsList = _db.Posts;
+            return View(postsList); // returns a view with all the posts
         }
 
         public IActionResult Privacy()
@@ -44,19 +45,54 @@ namespace Blog_Website.Controllers
         [HttpGet]
         public IActionResult Edit() // GET HTTP METHOD
         {
-            return View(new Post());
+            return View();
         }
 
         [HttpPost]
-        public IActionResult Edit(Post post) // POST HTTP METHOD
+        public IActionResult Edit(int? id) // POST HTTP METHOD
         {
-            _db.Posts.Add(post);
+            _db.Posts.Find(id);
             _db.SaveChanges();
 
             return RedirectToAction("Index");
         }
 
+        // GET-Delete Expense, works with the view
+        [HttpGet]
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
 
+            var obj = _db.Posts.Find(id);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            return View(obj);
+        }
+
+        //POST-Delete Expense, works with the database
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteExpense(int? id)
+        {
+            var obj = _db.Posts.Find(id);
+
+            if (obj == null)
+            {
+                return NotFound();
+            }
+
+            _db.Posts.Remove(obj);
+            _db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
