@@ -37,6 +37,12 @@
                 <tbody>
                     @foreach (var post in Model)
                     {
+                        <article>
+                            <div>
+                                <a class="btn btn-danger" asp-route-Id="@post.Id">"@post.Created"</a>
+                            </div>
+
+                        </article>
                         <tr> <!-- table row - tr -->
                             <td width="35%">@post.Title</td> <!-- table data - td -->
                             <td width="35%">@post.Body</td>
