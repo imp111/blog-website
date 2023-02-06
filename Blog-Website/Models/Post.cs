@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Blog_Website.Models
@@ -16,6 +17,9 @@ namespace Blog_Website.Models
         [Required]
         public string Body { get; set; } = "";
 
-        public DateTime Created { get; set; } = DateTime.Now;
+        public DateTime Created { get; set; } = DateTime.Now.Date;
+
+        //public string[]? Images { get; set; }
     }
+
 }

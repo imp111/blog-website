@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "HuPMd0HAULncugBBkWXNiEi9fo55yShWBYyLIt2g+Ig=",
+  "Hash": "itQNDTy8XviKtZGqjfruwxZ3dMJrywyu47fFnL8JUFc=",
   "Source": "Blog-Website",
   "BasePath": "_content/Blog-Website",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\images\\simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg",
+      "SourceId": "Blog-Website",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\",
+      "BasePath": "_content/Blog-Website",
+      "RelativePath": "images/simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg"
     },
     {
       "Identity": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\js\\site.js",

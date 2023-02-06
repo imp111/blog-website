@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\images\\simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg",
+      "PackagePath": "staticwebassets\\images\\simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg"
+    },
+    {
       "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
