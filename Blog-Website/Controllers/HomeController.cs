@@ -43,7 +43,7 @@ namespace Blog_Website.Controllers
         [HttpGet]
         public IActionResult Edit(int id) // GET HTTP METHOD
         {
-            if (id == null || id == 0)
+            if (id == 0)
             {
                 return NotFound();
             }
@@ -77,7 +77,7 @@ namespace Blog_Website.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            if (id == null || id == 0)
+            if (id == 0)
             {
                 return NotFound();
             }
@@ -97,7 +97,7 @@ namespace Blog_Website.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeletePost(int id)
         {
-            if (id == null)
+            if (id == 0)
             {
                 return NotFound();
             }
