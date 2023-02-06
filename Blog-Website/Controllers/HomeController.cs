@@ -1,4 +1,6 @@
 ﻿using Blog_Website.Data;
+using Blog_Website.Data.Repository;
+using Blog_Website.Migrations;
 using Blog_Website.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -8,23 +10,18 @@ namespace Blog_Website.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ApplicationDbContext _db;
+        private IRepository _repo;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext db)
+        public HomeController(ILogger<HomeController> logger, IRepository repo)
         {
             _logger = logger;
-            _db = db;
+            _repo = repo;
         }
 
         public IActionResult Index()
         {
-            IEnumerable<Post> postsList = _db.Posts;
+            List<Post> postsList = _repo.GetAllPosts();
             return View(postsList); // returns a view with all the posts
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
         }
 
         [HttpGet]
@@ -36,22 +33,22 @@ namespace Blog_Website.Controllers
         [HttpPost]
         public IActionResult Post(Post post) // POST HTTP METHOD
         {
-            _db.Posts.Add(post);
-            _db.SaveChanges();
+            _repo.AddPost(post);
+            _repo.SaveChanges();
 
             return RedirectToAction("Index");
         }
         
         
         [HttpGet]
-        public IActionResult Edit(int? id) // GET HTTP METHOD
+        public IActionResult Edit(int id) // GET HTTP METHOD
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            var obj = _db.Posts.Find(id);
+            var obj = _repo.GetPost(id);
 
             if (obj == null)
             {
@@ -67,8 +64,8 @@ namespace Blog_Website.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Posts.Update(obj);
-                _db.SaveChanges();
+                _repo.UpdatePost(obj);
+                _repo.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -78,14 +75,14 @@ namespace Blog_Website.Controllers
 
         // GET-Delete Expense, works with the view
         [HttpGet]
-        public IActionResult Delete(int? id)
+        public IActionResult Delete(int id)
         {
             if (id == null || id == 0)
             {
                 return NotFound();
             }
 
-            var obj = _db.Posts.Find(id);
+            var obj = _repo.GetPost(id);
 
             if (obj == null)
             {
@@ -98,17 +95,15 @@ namespace Blog_Website.Controllers
         //POST-Delete Expense, works with the database
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult DeletePost(int? id)
+        public IActionResult DeletePost(int id)
         {
-            var obj = _db.Posts.Find(id);
-
-            if (obj == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            _db.Posts.Remove(obj);
-            _db.SaveChanges();
+            _repo.RemovePost(id);
+            _repo.SaveChanges();
 
             return RedirectToAction("Index");
         }
