@@ -17,7 +17,7 @@
 
                             <div class="col-md-8">
                                 <div class="card-body">
-                                <h2 class="card-title"><a asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="View">@post.Title</a></h2>
+                                <h2 class="card-title"><a class="text-decoration-none" asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="View">@post.Title</a></h2>
                                     <p class="card-text">@post.Body</p>
                                     <p class="card-text" asp-route-Id="@post.Id"><small class="text-muted">@post.Created</small></p>
                                 </div>
