@@ -1,0 +1,14 @@
+﻿@model Post
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>@Model.Title</h1>
+
+<h2>@Model.Body</h2>
+
+<h3>@Model.Created</h3>
+
+<a class="btn btn-primary" asp-route-Id="@Model.Id" asp-area="" asp-controller="Home" asp-action="Edit">Edit</a>
+<a class="btn btn-danger" asp-route-Id="@Model.Id" asp-area="" asp-controller="Home" asp-action="Delete">Delete</a>

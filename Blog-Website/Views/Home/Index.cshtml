@@ -17,11 +17,9 @@
 
                             <div class="col-md-8">
                                 <div class="card-body">
-                                    <h2 class="card-title">@post.Title</h2>
+                                <h2 class="card-title"><a asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="View">@post.Title</a></h2>
                                     <p class="card-text">@post.Body</p>
                                     <p class="card-text" asp-route-Id="@post.Id"><small class="text-muted">@post.Created</small></p>
-                                    <a class="btn btn-primary" asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="Edit">Edit</a>
-                                    <a class="btn btn-danger" asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="Delete">Delete</a>
                                 </div>
                             </div>
 

@@ -25,9 +25,17 @@ namespace Blog_Website.Controllers
         }
 
         [HttpGet]
-        public IActionResult Post() // GET HTTP METHOD
+        public IActionResult View(int id) // GET HTTP METHOD
         {
-            return View(new Post());
+            var obj = _repo.GetPost(id);
+            return View(obj);
+        }
+
+        [HttpGet]
+        public IActionResult Post(int id) // GET HTTP METHOD
+        {
+            var obj = _repo.GetPost(id);
+            return View(obj);
         }
 
         [HttpPost]
