@@ -6,10 +6,9 @@
 
 <div class="text-center">
     <div class="container p-3">
-         <div class="row pt-4">
-            <div class="col-6">
-                <h2 class="text-primary">Posts: </h2>
-            </div>
+
+        <div class="row pt-4">
+            <h1 class="text-left">Posts</h1>
         </div>
 
         <br />
@@ -18,8 +17,8 @@
         {
             @foreach (var post in Model)
             {
-                <a class="text-decoration-none" asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="Delete">
-                    <div class="card mb-3" style="max-width: 100%; cursor: pointer;">
+                <!--<a class="text-decoration-none" asp-route-Id="@post.Id" asp-area="" asp-controller="Home" asp-action="Delete"> -->
+                    <div class="card mb-3" style="max-width: 100%;">
                         <div class="row g-0">
 
                             <div class="col-md-8">
@@ -39,7 +38,7 @@
                         </div>
                     </div>
 
-                </a>
+                <!--</a> -->
                
             }
         }
