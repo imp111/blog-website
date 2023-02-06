@@ -5,9 +5,10 @@ namespace Blog_Website.Data.Repository
     public interface IRepository
     {
         Post GetPost(int id);
-        List<Post> GetAllPosts(int id);
-        bool AddPost(Post post);
-        bool UpdatePost(Post post);
-        bool RemovePost(int id);
+        List<Post> GetAllPosts();
+        void AddPost(Post post);
+        void UpdatePost(Post post);
+        void RemovePost(int id);
+        bool SaveChanges();
     }
 }

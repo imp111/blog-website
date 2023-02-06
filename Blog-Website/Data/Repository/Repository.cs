@@ -1,32 +1,50 @@
-﻿using Blog_Website.Models;
+﻿using Blog_Website.Controllers;
+using Blog_Website.Models;
 
 namespace Blog_Website.Data.Repository
 {
     public class Repository : IRepository
     {
-        public bool AddPost(Post post)
+        private readonly ApplicationDbContext _db;
+
+        public Repository(ApplicationDbContext db)
         {
-            throw new NotImplementedException();
+            _db = db;
         }
 
-        public List<Post> GetAllPosts(int id)
+        public List<Post> GetAllPosts()
         {
-            throw new NotImplementedException();
+            return _db.Posts.ToList();
         }
 
         public Post GetPost(int id)
         {
-            throw new NotImplementedException();
+            return _db.Posts.FirstOrDefault(p => p.Id == id);
         }
 
-        public bool RemovePost(int id)
+        public void RemovePost(int id)
         {
-            throw new NotImplementedException();
+            _db.Posts.Remove(GetPost(id));
         }
 
-        public bool UpdatePost(Post post)
+        public void UpdatePost(Post post)
         {
-            throw new NotImplementedException();
+            _db.Posts.Update(post);
+        }
+
+        public void AddPost(Post post)
+        {
+            _db.Posts.Add(post);
+        }
+
+        public bool SaveChanges()
+        {
+            if (_db.SaveChanges() > 0)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
