@@ -39,7 +39,7 @@ try
     if (!ctx.Roles.Any())
     {
         // create a role
-        roleManager.CreateAsync(adminRole);
+        await roleManager.CreateAsync(adminRole);
     }
 
     if (!ctx.Users.Any(u => u.UserName == "Admin"))
@@ -47,10 +47,10 @@ try
         // create admin user
         var adminUser = new IdentityUser { UserName = "admin", Email = "admin@test.com" };
 
-        userManager.CreateAsync(adminUser, "praseta123");
+        await userManager.CreateAsync(adminUser, "praseta123");
 
         // add role to user
-        userManager.AddToRoleAsync(adminUser, adminRole.Name);
+        await userManager.AddToRoleAsync(adminUser, adminRole.Name);
     }
 }
 catch (Exception ex)
