@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Blog_Website.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class PanelController : Controller
     {
         public PanelController()
