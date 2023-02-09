@@ -2,7 +2,6 @@ using Blog_Website.Data;
 using Blog_Website.Data.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +27,8 @@ var app = builder.Build();
 
 try
 {
-    var scope = app.Services.CreateScope();
+    // var scope = app.Services.CreateScope();
+    var scope = builder.Build().Services.CreateScope();
     var ctx = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>(); // database context
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>(); // manages all the user accounts
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>(); // manages all the roles that you can assign an account to
@@ -47,13 +47,11 @@ try
         // create admin user
         var adminUser = new IdentityUser { UserName = "admin", Email = "admin@test.com" };
 
-        string password = "praseta123";
-        userManager.CreateAsync(adminUser, password);
+        userManager.CreateAsync(adminUser, "praseta123");
 
         // add role to user
         userManager.AddToRoleAsync(adminUser, adminRole.Name);
     }
-
 }
 catch (Exception ex)
 {

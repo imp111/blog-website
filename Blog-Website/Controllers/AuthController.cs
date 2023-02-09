@@ -21,17 +21,17 @@ namespace Blog_Website.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel viewModel)
+        public async Task<IActionResult> Login(LoginViewModel viewModel)
         {
-            _signInManager.PasswordSignInAsync(viewModel.Username, viewModel.Password, false, false); // get the username and password from the viewmodel and sign in
+            await _signInManager.PasswordSignInAsync(viewModel.Username, viewModel.Password, false, false); // get the username and password from the viewmodel and sign in
 
             return RedirectToAction("Index", "Home"); // return to the index action of the home controller
         } 
 
         [HttpGet]
-        public IActionResult Logout()
+        public async Task<IActionResult> Logout()
         {
-            _signInManager.SignOutAsync(); // sign out
+            await _signInManager.SignOutAsync(); // sign out
 
             return RedirectToAction("Index", "Home");
         }
