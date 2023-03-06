@@ -1,6 +1,6 @@
-## Blog Website
+# Blog Website
 
-# NuGet Packages:
+## NuGet Packages:
   - Microsoft.EntitiyFrameworkCore.Tools
   - Microsoft.EntityFrameworkCore
   - Microsoft.EntityFrameworkCore.SqlServer
@@ -10,6 +10,6 @@
   - NUnit3TestAdapter
   - ASP.NET and packages version: 6.0.12
 
-# Installed Extentions:
+## Installed Extentions:
   - Open Command Line
   - Add New File
