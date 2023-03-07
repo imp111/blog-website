@@ -70,7 +70,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); // use static files - images, etc.
 
 app.UseRouting();
 
