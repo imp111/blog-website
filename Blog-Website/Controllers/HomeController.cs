@@ -2,6 +2,7 @@
 using Blog_Website.Data.Repository;
 using Blog_Website.Migrations;
 using Blog_Website.Models;
+using Blog_Website.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -46,39 +47,49 @@ namespace Blog_Website.Controllers
 
             return RedirectToAction("Index");
         }
-        
-        
+
+
         [HttpGet]
         public IActionResult Edit(int id) // GET HTTP METHOD
         {
             if (id == 0)
             {
-                return NotFound();
+                return View(new PostViewModel());
             }
-
-            var obj = _repo.GetPost(id);
-
-            if (obj == null)
+            else
             {
-                return NotFound();
-            }
+                var obj = _repo.GetPost(id);
 
-            return View(obj);
+                return View(new PostViewModel
+                {
+                    Id = obj.Id,
+                    Title = obj.Title,
+                    Body = obj.Body,
+                });
+            }
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(Post obj) //POST-Delete HTTP METHOD, works with the database
+        public IActionResult Edit(PostViewModel obj) //POST-Delete HTTP METHOD, works with the database
         {
+            var post = new Post
+            {
+                Id = obj.Id,
+                Title = obj.Title,
+                Body = obj.Body,
+                Image = ""
+            };
+
             if (ModelState.IsValid)
             {
-                _repo.UpdatePost(obj);
+                _repo.UpdatePost(post);
                 _repo.SaveChanges();
 
                 return RedirectToAction("Index");
             }
 
-            return View(obj);
+            return View(post);
         }
 
         // GET-Delete Expense, works with the view
