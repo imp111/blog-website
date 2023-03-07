@@ -6,6 +6,7 @@
   - Microsoft.EntityFrameworkCore.SqlServer
   - Microsoft.Identity.EntityFrameworkCore
   - Selenium.WebDriver
+  - Selenium.WebDriver.Support
   - NUnit
   - NUnit3TestAdapter
   - ASP.NET and packages version: 6.0.12
