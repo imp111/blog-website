@@ -17,9 +17,8 @@ namespace Blog_Website.Models
         [Required]
         public string Body { get; set; } = "";
 
+        public string? Image { get; set; }
+
         public DateTime Created { get; set; } = DateTime.Now.Date;
-
-        //public string[]? Images { get; set; }
     }
-
 }

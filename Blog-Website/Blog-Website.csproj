@@ -22,4 +22,9 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.8.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\content\blog\" />
+    <Folder Include="wwwroot\content\static\" />
+  </ItemGroup>
+
 </Project>
