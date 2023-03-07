@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                   *@if (User.Identity.Name == "admin")
+                    @if (User.Identity.Name == "admin")
                     {
                         <a class="btn btn-dark" asp-controller="Panel" asp-action="Index">Admin Panel</a>
                     }
