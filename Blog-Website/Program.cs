@@ -1,4 +1,5 @@
 using Blog_Website.Data;
+using Blog_Website.Data.FileManager;
 using Blog_Website.Data.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 });
 
 builder.Services.AddTransient<IRepository, Repository>();
+builder.Services.AddTransient<IFileManager, FileManager>();
 
 var app = builder.Build();
 

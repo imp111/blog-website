@@ -1,4 +1,5 @@
 ﻿using Blog_Website.Data;
+using Blog_Website.Data.FileManager;
 using Blog_Website.Data.Repository;
 using Blog_Website.Migrations;
 using Blog_Website.Models;
@@ -12,11 +13,13 @@ namespace Blog_Website.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private IRepository _repo;
+        private IFileManager _fileManager;
 
-        public HomeController(ILogger<HomeController> logger, IRepository repo)
+        public HomeController(ILogger<HomeController> logger, IRepository repo, IFileManager fileManager)
         {
             _logger = logger;
             _repo = repo;
+            _fileManager = fileManager;
         }
 
         public IActionResult Index()
@@ -78,7 +81,7 @@ namespace Blog_Website.Controllers
                 Id = obj.Id,
                 Title = obj.Title,
                 Body = obj.Body,
-                Image = ""
+                Image = _fileManager.SaveImage(obj.Image)
             };
 
             if (ModelState.IsValid)
