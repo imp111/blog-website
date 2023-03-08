@@ -2,6 +2,7 @@
 {
     public interface IFileManager
     {
+        FileStream ImageStream(string image);
         string SaveImage(IFormFile image);
     }
 }

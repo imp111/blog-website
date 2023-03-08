@@ -9,6 +9,11 @@
             _imagePath = config["Path:Images"];
         }
 
+        public FileStream ImageStream(string image)
+        {
+            return new FileStream(Path.Combine(_imagePath, image), FileMode.Open, FileAccess.Read);
+        }
+
         public string SaveImage(IFormFile image)
         {
             try

@@ -24,7 +24,11 @@
                             </div>
 
                             <div class="col-md-4">
-                                <img src="/images/simple-shape-mosquito-logo-design-graphic-symbol-icon-sign-illustration-creative-idea-vector.jpg" class="img-fluid rounded-start" alt="photo">
+                                @if (!String.IsNullOrEmpty(post.Image))
+                                {
+                                    var imgPath = $"/Image/{post.Image}";
+                                    <img src="@imgPath" class="img-fluid rounded-start" alt="photo">
+                                }
                             </div>
 
                         </div>

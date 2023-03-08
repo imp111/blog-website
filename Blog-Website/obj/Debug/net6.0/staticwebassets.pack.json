@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\Blog-Website.bundle.scp.css"
     },
     {
+      "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\content\\blog\\img_08-03-2023-22-25-18.jpg",
+      "PackagePath": "staticwebassets\\content\\blog\\img_08-03-2023-22-25-18.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\content\\blog\\img_08-03-2023-22-27-39.jpg",
+      "PackagePath": "staticwebassets\\content\\blog\\img_08-03-2023-22-27-39.jpg"
+    },
+    {
+      "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\content\\blog\\img_08-03-2023-22-43-04.jpg",
+      "PackagePath": "staticwebassets\\content\\blog\\img_08-03-2023-22-43-04.jpg"
+    },
+    {
       "Id": "D:\\Projects\\Blog-Website\\Blog-Website\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
