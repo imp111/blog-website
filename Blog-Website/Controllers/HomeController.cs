@@ -1,7 +1,5 @@
-﻿using Blog_Website.Data;
-using Blog_Website.Data.FileManager;
+﻿using Blog_Website.Data.FileManager;
 using Blog_Website.Data.Repository;
-using Blog_Website.Migrations;
 using Blog_Website.Models;
 using Blog_Website.ViewModels;
 using Microsoft.AspNetCore.Mvc;
