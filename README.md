@@ -14,3 +14,6 @@
 ## Installed Extentions:
   - Open Command Line
   - Add New File
+  
+## Plugins:
+  - Trumbowyg - https://alex-d.github.io/Trumbowyg/
