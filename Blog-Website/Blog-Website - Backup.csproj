@@ -22,14 +22,4 @@
     <PackageReference Include="Selenium.WebDriver" Version="4.8.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\content\blog\" />
-    <Folder Include="wwwroot\content\static\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\lib\Trumbowyg-main\.github\FUNDING.yml" />
-    <None Include="wwwroot\lib\Trumbowyg-main\.github\ISSUE_TEMPLATE.md" />
-  </ItemGroup>
-
 </Project>
