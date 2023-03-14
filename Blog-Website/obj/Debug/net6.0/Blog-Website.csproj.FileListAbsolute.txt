@@ -1,4 +1,3 @@
-D:\Projects\Blog-Website\Blog-Website\bin\Debug\net6.0\appsettings.Development.json
 D:\Projects\Blog-Website\Blog-Website\bin\Debug\net6.0\appsettings.json
 D:\Projects\Blog-Website\Blog-Website\bin\Debug\net6.0\Blog-Website.staticwebassets.runtime.json
 D:\Projects\Blog-Website\Blog-Website\bin\Debug\net6.0\Blog-Website.exe
