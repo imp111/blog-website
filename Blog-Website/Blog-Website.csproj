@@ -27,12 +27,9 @@
     <Folder Include="wwwroot\content\static\" />
   </ItemGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <None Include="wwwroot\lib\Trumbowyg-main\.github\FUNDING.yml" />
     <None Include="wwwroot\lib\Trumbowyg-main\.github\ISSUE_TEMPLATE.md" />
   </ItemGroup>
 
-=======
->>>>>>> d54f0459c119d65e2abfcf6b99691923874e8f7e
 </Project>
