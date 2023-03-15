@@ -4,6 +4,7 @@
   - Microsoft.EntitiyFrameworkCore.Tools
   - Microsoft.EntityFrameworkCore
   - Microsoft.EntityFrameworkCore.SqlServer
+  - Microsoft.VisualStudio.TestTools.UnitTesting
   - Microsoft.Identity.EntityFrameworkCore
   - Selenium.WebDriver
   - Selenium.WebDriver.Support
