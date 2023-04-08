@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i5G80Wd02Y/ijQL1CmEkVToXo9xBFCa1/QS//+KtJ/q+r0Q5MpSvdU2sKwFYkDgPtTar1w3ralpqTNt4F/jNpA==",
+  "dgSpecHash": "yZRHGIkXpyPv6bHVbITfmZUqy4IFSgv/xjcXtYp4StrtCxlnPlHZ9dp8qRr/LxHWHMVfoDAZUExrLHtOH9A6Mw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\Blog-Website\\Blog-Website\\Blog-Website.csproj",
+  "projectFilePath": "D:\\Projects\\blog-website\\Blog-Website\\Blog-Website.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\alexs\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\alexs\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
